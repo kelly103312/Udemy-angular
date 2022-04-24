@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {Personaje} from '../../models/Personaje';
+import { DbzService } from '../services/dbs.service';
 
 @Component({
   selector: 'app-personajes',
@@ -8,14 +9,14 @@ import {Personaje} from '../../models/Personaje';
 })
 export class PersonajesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dbzService: DbzService) { }
 
   ngOnInit(): void {
   }
-
-  nuevo: Personaje = {
-    nombre: '',
-    puntaje: 0
-  }
-  @Input() personajes: Personaje[] = [];
+  
+ // @Input() personajes: Personaje[] = [];
+   get personajes(){
+      return this.dbzService.personajes;
+   }
+   
 }

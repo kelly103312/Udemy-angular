@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Personaje} from '../../models/Personaje';
+import { DbzService } from '../services/dbs.service';
 
 @Component({
   selector: 'app-main-page',
@@ -9,7 +10,9 @@ import {Personaje} from '../../models/Personaje';
 })
 export class MainPageComponent implements OnInit {
 
-  constructor() { }
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
   }
@@ -18,9 +21,6 @@ export class MainPageComponent implements OnInit {
       puntaje: 0
   }
 
-  personajes: Personaje[] = [];
 
-  agregarNuevo(arg: Personaje){
-    this.personajes.push(arg);
-  }
+
 }
