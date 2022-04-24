@@ -1,0 +1,18 @@
+<div class="container">
+    <h1>Personajes </h1>
+    <hr>
+    <div class="row">
+        <div class="col-5">
+            <!--Se manda al componente el listado, en este caso el comonente esta escuchando este evento-->
+            <app-personajes [personajes]="personajes"></app-personajes>
+        </div>
+        
+        <div class="col-5">
+            <!--Para emitir un evento se propio se usa el (en este caso) onNuevo...
+                 y se manda a un método el evento que queremos-->
+            <app-agregar [nuevo]="nuevo" (onNuevoPersonaje)="agregarNuevo($event)"></app-agregar>
+
+        </div>
+        
+    </div>
+</div>
