@@ -13,6 +13,7 @@ export class DbzService{
 
     constructor(){
         console.log('Services');
+        
     }
 
     agregarPersonaje( personaje: Personaje){
