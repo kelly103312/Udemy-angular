@@ -13,7 +13,7 @@ jobs:
       
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -23,7 +23,7 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: create test
-      run: echo "Commit Message 1" >> commitmessage.txt
+      run: echo "Commit Message 1" >> commit_message.txt
       
     - name: Build Angular project
       run: npm run build
@@ -34,12 +34,9 @@ jobs:
     - name: commit-push
       uses: stefanzweifel/git-auto-commit-action@v5
       with:
-          branch: feature-test
-          add_options: '-u'
           commit_message: Automated Change
           commit_user_name: kelly103312
           commit_user_email: cristaldemilcolores@gmail.com
-          create_branch: true
           
     - name: "Run if changes have been detected"
       if: steps.auto-commit-action.outputs.changes_detected == 'true'
